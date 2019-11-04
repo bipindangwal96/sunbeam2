@@ -1,0 +1,155 @@
+
+1. #include <stdio.h>
+int main(void)
+{
+    int arr[] = {111, 222};
+    int *ptr = arr;
+    ++*ptr; //++(*ptr).
+    printf("arr[0] = %d, arr[1] = %d, *ptr = %d", arr[0], arr[1], *ptr);
+    return 0;
+}
+//Precedence of prefix ++ and * is same.
+//Associativity of both is right to left.
+//The expression ++*ptr has two operators of same precedence,
+//so compiler looks for assoiativity.
+//Associativity of operators is right to left.
+//Therefore the expression is treated as ++(*ptr).
+//Therefore the output of first program is " arr[0] = 112, arr[1] = 222, *ptr = 112"
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+2. #include <stdio.h>
+int main(void)
+{
+    int arr[] = {111, 222};
+    int *ptr = arr;
+    *ptr++; // *(ptr++)
+    printf("arr[0] = %d, arr[1] = %d, *ptr = %d", arr[0], arr[1], *ptr);
+    return 0;
+}
+//the expression *ptr++ is treated as *(ptr++)
+//as the precedence of postfix ++ is higher than *.
+//Therefore the output of second program is “arr[0] = 111, arr[1] = 222, *ptr = 222“.
+
+
+
+3. #include <stdio.h>
+int main(void)
+{
+    int arr[] = {111, 222,333,444,555};
+    int *ptr = arr;
+    *++ptr;
+    printf("arr[0] = %d, arr[1] = %d, *ptr = %d", arr[0], arr[1], *ptr);
+    return 0;
+}
+
+/*The expression *++ptr has two operators of same precedence, 
+so compiler looks for assoiativity. 
+Associativity of operators is right to left. 
+Therefore the expression is treated as *(++ptr). 
+Therefore the output of second program is “arr[0] = 111, arr[1] = 222, *ptr = 222“.
+*/
+
+4. 
+#include <stdio.h>
+#define macro(n, a, i, m) m##a##i##n
+#define MAIN macro(n, a, i, m)
+int MAIN(void )
+{
+	printf("SUNBEAM");
+	return 0;
+}
+A. MAIN
+B. sunbeam
+C. main
+D. SUNBEAM
+Answer: D
+
+5. 
+#include <stdio.h>
+void sayHello(char *dummyHello)
+{
+	dummyHello[5] = '.';
+	printf("%s\n", dummyHello);
+	return ;
+}
+int main(void)
+{
+	char *dummyHello = "Hello, PreDAC\n";
+	sayHello(dummyHello);
+	return 0;
+}
+A. Hello. PreDAC
+B. Hello, PreDAC
+C. Compile time error
+D. Run time error
+Answer: D
+
+6.
+#include <stdio.h>
+void sayHello(char *dummyHello)
+{
+	dummyHello[5] = '.';
+	printf("%s\n", dummyHello);
+	return ;
+}
+int main(void)
+{
+	char name[]="Hello, PreDAC\n";
+	char *dummyHello = name;
+	sayHello(dummyHello);
+	return 0;
+}
+A. Hello. PreDAC
+B. Hello, PreDAC
+C. Compile time error
+D. Run time error
+Answer: A
+
+7.
+#include <stdio.h>
+void chat(char *text)
+{
+	text = text + 3;
+	return;
+}
+int main(void)
+{
+	char *text_msg;
+	text_msg = "HELLO,How are you???";
+	chat (text_msg);
+	printf ("Chat Message = %s \n", text_msg);
+	return 0;
+}
+A. Chat Message = HELLO,How are you???
+B. Chat Message = LO,How are you???
+C. Chat Message = ELLO,How are you???
+D. Chat Message = How are you???
+Answer: A
+
+
+8.
+
+#include <stdio.h>
+char* chat(char *text)
+{
+	text = text + 3;
+	return text;
+}
+int main(void)
+{
+	char *text_msg;
+	text_msg = "HELLO,How are you???";
+	text_msg= chat (text_msg);
+	printf ("Chat Message = %s \n", text_msg);
+	return 0;
+}
+A. Chat Message = HELLO,How are you???
+B. Chat Message = LO,How are you???
+C. Chat Message = ELLO,How are you???
+D. Chat Message = How are you???
+Answer: B
+
+
+

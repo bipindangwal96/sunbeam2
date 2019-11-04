@@ -1,0 +1,46 @@
+Linux GCC compiler
+
+Assuming that any of the Linux is installed properly on the system along with C\C++ development
+packages and source code sunbeam.c is kept in directory /home/user (sunbeam), the following commands will be used
+
+
+1. 
+   open terminal
+   press ctrl + shift + plus button to increase font of terminal.
+   press ctrl + minus button to decrease font on terminal.
+   
+   create a  sunbeam folder in home directory.
+   	goto home directory.   mkdir sunbeam
+        go inside sunbeam folder.  cd sunbeam
+
+   create sunbeam.c file with c prog code.      sudo vim sunbeam.c
+   
+	press insert key to type in vim editor.
+        type your c prog code.
+        and press escape key and type :wqa to save file.        
+  
+        
+
+ 
+for command line compilation of C source code on Linux.
+
+Command for generating expanded source code (sunbeam.i)
+>gcc –E –o sunbeam.i sunbeam.c
+
+using ls command check sunbeam.i file created and using vim sunbeam.i check contents of that file.
+
+Command for generating assembly language code (sunbeam.s)
+>gcc –S sunbeam.c
+
+Command for generating object code (sunbeam.o)
+>gcc –c sunbeam.c
+
+Command for generating executable code (sunbeam.out)
+>gcc –o sunbeam.out sunbeam.o
+
+OR
+
+>gcc –o sunbeam.out sunbeam.c
+
+to run program from sunbeam folder give command       ./sunbeam.out
+

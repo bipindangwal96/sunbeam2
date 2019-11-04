@@ -1,0 +1,233 @@
+# Linux Filesystem Structure:
+- While installation of Linux system we need to create two partitions:
+1. "/" (root) partition also called as "data partition".
+2. swap partition
+- Linux follows FHS i.e. FileSystem Heirarchy Standards.
+- data can be store into the "data partition" in an organized manner, so linux filesystem structure is having heirachical structure, which is a like an inverted tree.
+- when any user loggedon into the system/opens a terminal, system takes the user bydefualt into the user's home dir.
+- linux filesystem structure starts with root dir ("/"), and all the data can be stored/kept inside it under sub-dir's in an organized manner.
+- root dir i.e. "/" dir contains sub-dir's like "/boot", "/bin", "/sbin", "/etc", "/lib", "/usr", "/home", "/root" "/mnt", "/dev" etc....
+
+1. "/boot": contains static files of the boot loader, kernel, initrd (initial ramdisk).
+- initrd (initial ramdisk) is a scheme for loading a temporarily root filesystem into memory, which may be used as a part of the linux startup process, initrd and initramfs refer to two different methods of acheiving this. Both are commonly used to make preparations before the real root file system can be mounted.
+- it contains information about booting the system
+- it contains linux kernel by the name vmlinuz.
+
+2. "/bin": contains user commands in binary format, like ls, cat, cp etc...
+
+3. "/sbin": contains admin/system commands in binary format, like lscpu, adduser, deluser, etc...
+
+4. "/home": contains home dir's of all user for multi-user system.
+- for any user on its creation of an account bydefault subdir by the name of the user got created by the operating system, in which that user can store data, user can have read, write as well execute perms in that dir.
+
+5. "/root": root is a home dir for root user
+
+6. "/etc": contains host specific system configuration files - it is like a "control panel" in windows.
+- in computing configuration files (or config files ) are files used to configure the parameters and initial settings for some computer programs. They are used for user applications, server processes and operating system settings.
+- e.g. YaST: Yet another Setup Tool ( Linux operating system setup and configuration tool) or debconf (for performing system-wide configuration taskson UNIX-like operating systems).
+"/etc/opt": contains configuration files for add-on-packages that are stored in /opt.
+
+7. "/dev": contains device files
+
+8. "/lib": contains shared libraries required for /bin and /sbin.
+
+9. "/mnt": contains temporarily mounted filesystems
+
+10. "/media": mount point for removable media such as CDROMs.
+
+11. "/opt": contains optional application software packages.
+ 
+12. "/proc": virtual filesystem provides process and kernel information as a files. In Linux , corresponds to a procfs mount. Generally automatically generated and populated by the system, on the fly.
+ 
+# path - it is a unique location of any file in a filesystem structure that can be represent in a string format i.e. in sequence of chars format seperated filenames/sub-dir names by delimiter char or delimiter.
+e.g. "/home/sachin"
+- there are three delimiter chars:
+	1. slash ("/") -- in linux
+	2. backslash ("\") -- in windows
+	3. colon (":") -- in linux as well as in windows
+- there are two ways by which we can mention path of any file/dir:
+1. absolute path: path of any file/dir with respect to root directory ("/") i.e. it is a full path of any file/dir which starts with root dir ("/").
+	
+2. relative path: path of any file/dir with respect to the current working dir.
+=========================================================
+- UNIX consideres/treats everything as a file, i.e. from UNIX point of veiw (as Linux is UNIX like/based OS ) there are 7 types of files in UNIX/Linux:
+1. regular file (-): linux treats all text files, source files, audio files vedio files, image files etc....
+2. directory file (d): directory special file whose contents are name of files and sub dir's.
+3. character special device file (c): devices from which data gets transferred character by character are called as character special devices e.g. KBD, Monitor, Printer, serial ports & parellel ports etc...
+- information of device file gets loaded into "/dev" while booting.
+4. block special device file (b): devices from which data gets transefered block by block are called as block devices, e.g. all storage devices are block devices
+- OS treats all block devices as "block special device file".
+5. socket file (s): this is special type of file can be used for an IPC.
+6. named pipe file (p): this file can be used for an IPC
+7. linkable file (l): this is special type of file which contains info about another file.
++ Command Name: "pwd" - print/present working directory
+- this command displays absolute path (full path) of the present working directory
+- pwd comamand internally refers the value of shell variable by the name "PWD".
+	
++ Command Name: "cd" - to change current working directory
+$cd <dirpath> -- change dir to the dirpath
+$cd / -- goto the root directory -- "/" slash -- is user short hand variable
+$cd ~ -- goto the user's home dir -- "~" tild symbol -- is user short hand variable
+$cd   -- goto the user's home dir
+$cd - -- goto the prev directory
+$cd . -- remains in current dir
+$cd .. -- goto the parent dir of the current working dir
+	
++ Command Name: "ls" - to display contents of the directory
+- contents of the dir are nothing but name of files and sub-dir's.
+$ls <dirpath> -- it display contents of the dir by the name "dirpath".
+$ls -- bydefault it displays contents of the current directory
+$ls -l -- it display contents of the dir in a listing format.
+		
+total n
+n = total no. of data blocks allocated for the files and sub dir's in a given dir
+feild-1: first char of feild 1 denotes type the file next 3 chars of field 1 denotes access perms for user/owner
+next 3 chars of field 1 denotes access perms for group members last 3 chars of field 1 denotes access perms for group others.
+Feild-2: denotes no. of links exists for that file for regular file bydefualt no. of links i.e. link count = 1
+for directory file bydefualt no. of links i.e. link count = 2.
+feild-3 : denotes name of an user/owner
+feild-4 : denotes name of group
+feild-5 : denotes name of size of the file
+feild-6 : denotes time stamps - date of creation and last modified date & time in ISO format.
+feild-7 : name of the file
+- In UNIX/Linux filename starts with (".") are considered as a hidden file
+- the period (".")
+		
+
+options/flags/args description:
+-h : displays size of the files in human redable format
+-l : displays contents of the dir in a listing format
+-a : display all contents of the dir (including hidden files)
+-A : display all contents of the dir (including hidden files but excluding entries for "." & "..").
+-i : display inode number of the files inode number is an unique idenfier of the file.
+etc..... explore more options from man pages
+	 
++ Command Name: "cat" - 
+- cat command is used for concatenation of file/files and print it onto standard output.
+- cat command can be used to display contents of the regular file.
+ 
++ Command Name: "chmod" - used to change file mode bits
+- to assign access perms for user/owner, group members and others.
+	 +x : to assign execute perm to all
+	 +r : to assign read perm to all
+	 +w : to assign write perm to all
+	 u+r: to assign read perm to user/owner
+	 u+w: to assign write perm to user/owner 
+	 u+x: to assign excecute perm to user/owner
+	 g+r: to assign read perm to group members
+	 
+	 r -- read -- 4
+	 w -- write -- 2
+	 x -- execute -- 1
+	 .
+	 .
+	 .
+	 
++ Command Name: "cp" - to copy file/files
+$cp <source> <destination>
+	 
++ Command Name: "mv" - command used to move file/s from one location to another location.
+- this command can also be used to rename file/dir.
+
++ Command Name: "mkdir"
++ Command Name: "rmdir"
++ Command Name: "rm"
++ Command Name: "touch"
+	 
+- Shell variables - PWD, PATH etc...
+- Internally "shell" refers value of PATH variable to search binary of entered command and load/execute it from that location.
+
+- OS bydefualt opens 3 files for any program:
+1. stdin: standard input buffer -- program accepts/reads input from which stdin file/buffer.
+	 	
+2. stdout: standard output buffer -- output of any program gets redirected into the stdout buffer.
+
+3. stderr: standard error buffer -- if program having any errors, then those list of errors gets redirected into the "stderr" buffer and contents of stderr buffer gets displayed onto the standard output.
+	 	
+- redirection operators:
+1. input redirection operator (<) -- left cheveron
+2. output redirection operator (>) -- right cheveron
+3. error redirection operator (2>)
+
+- when any process gets terminated its exit status gets returned to an OS.
+- program can returns any one value out of following three values upon exit:
+	0		successfull termination
+	>0 = 1 	erroneous termination
+	<0 = -1	abnormal termination
+	 		
+- Multi-user commands:
+"multi-user" -- multiple users can be logged in into the single system at a time.
+w, who, whoami, sudo adduser, sudo deluser, tty etc...
+	
++ Command Name: pipe (|) - this command can be used to give/pass output of one command as an input to another command.
+(|) -- symbol for pipe command
+- it internally creates temporary buffer for storing an o/p of one command
+	- head
+	- tail
+	- sort
+	- uniq
+	- cut
+	- tr
+	- cascadding of commands with pipe command
+	- less
+
++ Command Name: "grep" - globally search regular expression and print.
+- grep searches for pattern/string/expression in file/files/filesystem structure and bydefault grep prints the matching line.
+	- egrep <=> grep -E
+	- fgrep <=> grep -F
+	- rgrep <=> grep -r
+	
+Following options can be used with grep command:
+-i -- ignore case distinctions
+-v -- invert the sense of matching
+-w -- select only those lines containing matches that form whole words.
+-x -- select only those matches that exactly match the whole line
+-y -- obsolete synonym for -i
+	
+$grep "java" sunbeam.txt --> prints the lines matches with the pattern
+$grep -n "java" sunbeam.txt --> prints the lines matches with line numbers
+$grep -c "java" sunbeam.txt --> supress normal output; instead print a count of matching line for each input files, with -v option prints non-matching lines
+$grep -w "program" sunbeam.txt --> prints the lines containg matches that form whole word
+$grep -A2 "device" sunbeam.txt --> prints two line after match is found including match line
+$grep -B2 "device" sunbeam.txt --> prints two line before match is found including match line
+$grep -C2 "device" sunbeam.txt --> prints two line after as well as before match is found including match line.
+
+- "anchoring": 
+- The carot (^) and and the dollar sign ($) are the meta characters.
+- "^" -- at the begining of a line
+- "$" -- at the end of a line
+	
+$grep "is" taste.txt 
+$grep "^is" taste.txt 
+$grep "is$" taste.txt 
+$grep "^is$" taste.txt 
+
+- "character classes and bracket expressions":
+$cat select.txt
+$grep "bg" select.txt 
+$grep "b.g" select.txt -- the period "." matches any single character
+$grep "b[a]g" select.txt -- "bracket expression"
+$grep "b[ai]g" select.txt 
+$grep "b[aiu]g" select.txt 
+$grep "b[a-z]g" select.txt -- within "bracket expression" a "range expression"
+$grep "b*g" select.txt
+$grep "b\*g" select.txt 
+$fgrep "b*g" select.txt OR grep -F "b*g" select.txt
+ 
+"repetition operators":
+? -- at most once
+* -- zero or more occurences
++ -- one or more occurence
+{n} -- exact n no. of occurences
+{n,} -- more or equal to n no. of occurences
+{,m} -- atmost m no. of occurences
+{n,m} -- more than or equal to n and less than or equal to m.
+	
+$egrep "wo*w" repeat.txt --> preceding item will be matched zero or more times
+$egrep "wo?w" repeat.txt --> preceding item is optional and matched at most once
+$egrep "wo+w" repeat.txt --> preceding item will be matched one or more times
+$egrep "wo{n}w" repeat.txt --> preceding item will be matched exact n times
+$egrep "wo{n,}w" repeat.txt --> preceding item will be matched exact n or more times
+$egrep "wo{,m}w" repeat.txt --> preceding item will be matched atmost m times
+$egrep "wo{n,m}w" repeat.txt --> preceding item will be matched atleast n times, but not more than m times.
+

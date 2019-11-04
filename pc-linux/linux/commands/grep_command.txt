@@ -1,0 +1,66 @@
+* command name: "grep" -- globally search regular expression and print
+	- grep searches for pattern/string/expression in file/files/filesystem structure and
+	bydefault grep prints the matching line.
+	- egrep <=> grep -E
+	- fgrep <=> grep -F
+	- rgrep <=> grep -r
+	
+	- following options can be used with grep command:
+		-i -- ignore case distinctions
+		-v -- invert the sense of matching
+		-w -- select only those lines containing matches that form whole words.
+		-x -- select only those matches that exactly match the whole line
+		-y -- obsolete synonym for -i
+	
+	$grep "java" sunbeam.txt --> prints the lines matches with the pattern
+	$grep -n "java" sunbeam.txt --> prints the lines matches with line numbers
+	$grep -c "java" sunbeam.txt --> supress normal output; instead print a count of matching
+	line for each input files, with -v option prints non-matching lines
+	
+	$grep -w "program" sunbeam.txt --> prints the lines containg matches that form whole word
+	$grep -A2 "device" sunbeam.txt --> prints two line after match is found including match line
+	$grep -B2 "device" sunbeam.txt --> prints two line before match is found including match line
+	$grep -C2 "device" sunbeam.txt --> prints two line after as well as before match is found
+	including match line.
+	
+	- "anchoring": 
+	- The carot ^ and and the dollar sign $ are the meta characters
+	- "^" -- at the begining of a line
+	- "$" -- at the end of a line
+	
+	$grep "is" taste.txt 
+	$grep "^is" taste.txt 
+	$grep "is$" taste.txt 
+	$grep "^is$" taste.txt 
+
+	- "character classes and bracket expressions":
+	$cat select.txt
+	$grep "bg" select.txt 
+	$grep "b.g" select.txt -- the period "." matches any single character
+	$grep "b[a]g" select.txt -- "bracket expression"
+	$grep "b[ai]g" select.txt 
+	$grep "b[aiu]g" select.txt 
+	$grep "b[a-z]g" select.txt -- within "bracket expression" a "range expression"
+	$grep "b*g" select.txt
+	$grep "b\*g" select.txt 
+	$fgrep "b*g" select.txt OR grep -F "b*g" select.txt
+ 
+	+ "repetition operators":
+		? -- at most once
+		* -- zero or more occurences
+		+ -- one or more occurence
+		{n} -- exact n no. of occurences
+		{n,} -- more or equal to n no. of occurences
+		{,m} -- atmost m no. of occurences
+		{n,m} -- more than or equal to n and less than or equal to m.
+	
+	$egrep "wo*w" repeat.txt --> preceding item will be matched zero or more times
+	$egrep "wo?w" repeat.txt --> preceding item is optional and matched at most once
+	$egrep "wo+w" repeat.txt --> preceding item will be matched one or more times
+	$egrep "wo{n}w" repeat.txt --> preceding item will be matched exact n times
+	$egrep "wo{n,}w" repeat.txt --> preceding item will be matched exact n or more times
+	$egrep "wo{,m}w" repeat.txt --> preceding item will be matched atmost m times
+	$egrep "wo{n,m}w" repeat.txt --> preceding item will be matched atleast n times, but not
+	more than m times.
+
+	

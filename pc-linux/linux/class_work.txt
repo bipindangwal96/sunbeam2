@@ -1,0 +1,284 @@
+ 1993  cd pc-linux/
+ 1994  ls
+ 1995  cd linux_assignments/
+ 1996  ls
+ 1997  cd ../commands/
+ 1998  ls
+ 1999  exit
+ 2000  pwd
+ 2001  cd /
+ 2002  pwd
+ 2003  clear
+ 2004  ls
+ 2005  cd boot/
+ 2006  ls
+ 2007  ls /bin
+ 2008  cd /
+ 2009  pwd
+ 2010  ls /sbin
+ 2011  ls /dev/
+ 2012  echo $SHELL
+ 2013  man bash
+ 2014  echo $PATH
+ 2015  pwd
+ 2016  cd /home/sunbeam/aug2019/
+ 2017  pwd
+ 2018  echo $PWD
+ 2019  man pwd
+ 2020  ls
+ 2021  cd /home/sunbeam/
+ 2022  ls
+ 2023  pwd
+ 2024  cd -
+ 2025  pwd
+ 2026  cd ~
+ 2027  pwd
+ 2028  echo $HOME
+ 2029  clear
+ 2030  ls -l
+ 2031  ls -1
+ 2032  ls -l
+ 2033  ls -1
+ 2034  cd aug2019/
+ 2035  ls -l
+ 2036  cd ~
+ 2037  pwd
+ 2038  cd aug2019/
+ 2039  mkdir os
+ 2040  ls
+ 2041  cd os
+ 2042  pwd
+ 2043  mkdir one two three
+ 2044  ls
+ 2045  mkdir one
+ 2046  ls
+ 2047  mkdir -p four/five/six/seven
+ 2048  ls
+ 2049  ls four/
+ 2050  ls four/five/
+ 2051  ls four/five/six
+ 2052  ls four/five/six/seven/
+ 2053  ls -R
+ 2054  ls -i
+ 2055  ls -i -1
+ 2056  man ls
+ 2057  man man
+ 2058  man 3 printf
+ 2059  man 1 printf
+ 2060  man 3 printf
+ 2061  man 1 mkdir
+ 2062  man 2 mkdir
+ 2063  man ls
+ 2064  ls
+ 2065  ls -a
+ 2066  ls -a one/
+ 2067  pwd
+ 2068  cd ..
+ 2069  pwd
+ 2070  cd ../../..
+ 2071  pwd
+ 2072  ls -1 -i -a
+ 2073  cd -
+ 2074  ls
+ 2075  ls -l
+ 2076  ls -l ~
+ 2077  ls -l /dev
+ 2078  ls -l
+ 2079  ls -i -l
+ 2080  ls -i
+ 2081  ls -l
+ 2082  ls -l -s
+ 2083  ls -l -s -a
+ 2084  pwd
+ 2085  cd os/
+ 2086  pwd
+ 2087  cat > file.txt
+ 2088  ls
+ 2089  cat file.txt 
+ 2090  ls -l
+ 2091  cat > file2.txt
+ 2092  ls -l
+ 2093  cat file.txt file2.txt 
+ 2094  cat file2.txt 
+ 2095  cat > file2.txt 
+ 2096  cat file2.txt 
+ 2097  cat >> file2.txt 
+ 2098  cat file2.txt 
+ 2099  cd four/five/six/
+ 2100  pwd
+ 2101  cp ../../../file.txt .
+ 2102  ls
+ 2103  cat > .india.txt
+ 2104  ls
+ 2105  ls -a
+ 2106  cd ../../..
+ 2107  pwd
+ 2108  ls -l
+ 2109  wc < file.txt 
+ 2110  wc  file.txt 
+ 2111  ls -l
+ 2112  ls -l > out.txt
+ 2113  cat out.txt 
+ 2114  wc < out.txt 
+ 2115  ls -M
+ 2116  ls -M 2> err.txt
+ 2117  ls
+ 2118  cat err.txt 
+ 2119  ls
+ 2120  ls -l
+ 2121  ls
+ 2122  pwd
+ 2123  ls
+ 2124  ls -l file.txt 
+ 2125  chmod +x file.txt 
+ 2126  ls -l file.txt 
+ 2127  chmod -x file.txt 
+ 2128  ls -l file.txt 
+ 2129  chmod u+x file.txt 
+ 2130  ls -l file.txt 
+ 2131  chmod u-x file.txt 
+ 2132  ls -l file.txt 
+ 2133  chmod g+x file.txt 
+ 2134  ls -l file.txt 
+ 2135  chmod o+x file.txt 
+ 2136  ls -l file.txt 
+ 2137  chmod 0777 file.txt 
+ 2138  ls -l file.txt 
+ 2139  chmod 0000 file.txt 
+ 2140  ls -l file.txt 
+ 2141  chmod 0644 file.txt 
+ 2142  ls -l file.txt 
+ 2143  ls -l
+ 2144  rm *.txt
+ 2145  ls
+ 2146  ls -l
+ 2147  ls -l > temp.txt
+ 2148  wc < temp.txt 
+ 2149  ls -l
+ 2150  ls -l -s
+ 2151  rm temp.txt 
+ 2152  ls -l
+ 2153  ls -l | wc
+ 2154  ls -l -a
+ 2155  cat > numbers.txt
+ 2156  ls -l
+ 2157  cat numbers.txt 
+ 2158  cat numbers.txt | less
+ 2159  head numbers.txt 
+ 2160  head -5 numbers.txt 
+ 2161  tail numbers.txt 
+ 2162  tail -5 numbers.txt 
+ 2163  head -20 numbers.txt 
+ 2164  head -20 numbers.txt | tail
+ 2165  head -20 numbers.txt | tail | tail
+ 2166  head -20 numbers.txt | tail | tail -5
+ 2167  cat > numbers.txt
+ 2168  cat numbers.txt 
+ 2169  cat > numbers.txt 
+ 2170  cat numbers.txt 
+ 2171  sort numbers.txt 
+ 2172  cat numbers.txt 
+ 2173  sort -n numbers.txt 
+ 2174  cat > numbers.txt 
+ 2175  cat numbers.txt 
+ 2176  uniq numbers.txt 
+ 2177  sort numbers.txt | uniq
+ 2178  ls -l
+ 2179  cd ..
+ 2180  ls
+ 2181  cd de
+ 2182  cd aug2019/
+ 2183  cd desd/
+ 2184  ls
+ 2185  pwd
+ 2186  ls
+ 2187  pwd
+ 2188  ls
+ 2189  ls pc-linux/
+ 2190  ls
+ 2191  cd pc-linux/
+ 2192  ls
+ 2193  cd co
+ 2194  ls
+ 2195  cd commands/
+ 2196  ls
+ 2197  cat sunbeam.txt 
+ 2198  cat sunbeam.txt | cut -d " " -f1
+ 2199  cat sunbeam.txt | cut -d " " -f1,2
+ 2200  cat sunbeam.txt | cut -d " " -f1,2,3
+ 2201  ls -i -l
+ 2202  ls -i -l | cut -d " " -f1
+ 2203  ls -i -l | cut -d " " -f1,2
+ 2204  ls -i -l | cut -d " " -f1,2,3
+ 2205  ls -i -l | cut -d " " -f1,2,3,4
+ 2206  ls -i -l | cut -d " " -f4,5
+ 2207  ls -i -l | cut -d " " -f8
+ 2208  ls -i -l | cut -d " " -f9
+ 2209  ls -i -l | cut -d " " -f10
+ 2210  ls -i -l | cut -d " " -f11
+ 2211  ls -i -l | cut -d " " -f1
+ 2212  echo "SunBeam"
+ 2213  echo "SunBeam" | tr "a-z" "A-Z"
+ 2214  echo "SunBeam" | tr "a-zA-Z" "A-Za-z"
+ 2215  echo $PATH
+ 2216  echo $PATH | tr ":" "\n"
+ 2217  echo "all,students,are,clever" | tr "," "\n"
+ 2218  ls
+ 2219  cat sunbeam.txt 
+ 2220  grep "program" sunbeam.txt
+ 2221  grep -v "program" sunbeam.txt
+ 2222  grep "Program" sunbeam.txt
+ 2223  grep -i "Program" sunbeam.txt
+ 2224  grep "program" sunbeam.txt
+ 2225  grep -w "program" sunbeam.txt
+ 2226  grep "device" sunbeam.txt
+ 2227  grep -c "program" sunbeam.txt
+ 2228  grep "program" sunbeam.txt
+ 2229  grep -A2 "device" sunbeam.txt
+ 2230  grep -A4 "device" sunbeam.txt
+ 2231  grep -B4 "device" sunbeam.txt
+ 2232  grep -C4 "device" sunbeam.txt
+ 2233  grep "program" *.txt
+ 2234  grep "java" *.txt
+ 2235  grep "nilesh" /home/sunbeam/aug2019/*/*/*
+ 2236  grep "nilesh" /home/sunbeam/aug2019/*/*/*/*
+ 2237  ls
+ 2238  vim grep_command.txt 
+ 2239  ls
+ 2240  cat select.txt 
+ 2241  ls
+ 2242  cat taste.txt 
+ 2243  grep "is" taste.txt 
+ 2244  grep "^is" taste.txt 
+ 2245  grep "is$" taste.txt 
+ 2246  grep "^is$" taste.txt 
+ 2247  cat select.txt 
+ 2248  grep "bg" select.txt 
+ 2249  grep "b[a]g" select.txt 
+ 2250  grep "b[ai]g" select.txt 
+ 2251  grep "b[aiu]g" select.txt 
+ 2252  grep "b[a-z]g" select.txt 
+ 2253  grep "b*g" select.txt 
+ 2254  grep "b\*g" select.txt 
+ 2255  grep -F "b*g" select.txt 
+ 2256  fgrep "b*g" select.txt 
+ 2257  cat repeat.txt 
+ 2258  egrep "wo*w" repeat.txt 
+ 2259  egrep "wo+w" repeat.txt 
+ 2260  egrep "wo?w" repeat.txt 
+ 2261  egrep "wo{3}w" repeat.txt 
+ 2262  egrep "wo{,3}w" repeat.txt 
+ 2263  egrep "wo{3,}w" repeat.txt 
+ 2264  egrep "wo{3,5}w" repeat.txt 
+ 2265  man grep
+ 2266  cd ..
+ 2267  ls
+ 2268  git status
+ 2269  cd pc-linux/
+ 2270  ls
+ 2271  git add .
+ 2272  git commit -m "linux_commands"
+ 2273  git push
+ 2274  git status
+ 2275  ls
+ 2276  history > class_work.txt
